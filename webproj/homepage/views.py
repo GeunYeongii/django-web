@@ -46,3 +46,7 @@ def delete(request, coffee_id) :
     coffee = Coffee.objects.get(id=coffee_id)
     coffee.delete()
     return redirect('/coffee')
+
+
+def eda(request) :
+    return render(request,'eda.html', {})

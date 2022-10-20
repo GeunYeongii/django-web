@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from homepage.views import index, coffee_view,create,update,delete
+from homepage.views import index, coffee_view,create,update,delete,eda
 
 
 urlpatterns = [
@@ -24,5 +24,6 @@ urlpatterns = [
     path('create/',create, name='create'),
     path('update/<int:coffee_id>',update, name='update'),
     path('delete/<int:coffee_id>',delete, name='delete'),
+    path('eda/',eda,name='eda'),
     path('admin/', admin.site.urls), # 127.0.0.1/admin  
 ]
