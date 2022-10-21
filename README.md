@@ -13,7 +13,7 @@ $ python manage.py runserver
 $ python manage.py makemigrations <app_name>
 $ python manage.py migrate
 ```
-
+### Site | https://django-kdt.herokuapp.com
 https://user-images.githubusercontent.com/82564045/197117316-1702b40c-7474-4111-9ae3-993a84823fbf.mov
 
 https://user-images.githubusercontent.com/82564045/197117547-34633d39-8c63-4cd7-a74b-2cf0c048ab51.mov
