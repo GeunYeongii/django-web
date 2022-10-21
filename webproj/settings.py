@@ -14,7 +14,6 @@ import os
 from pathlib import Path
 import json
 import dj_database_url
-from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,11 +28,7 @@ with open(secret_file) as f:
 
 
 def get_secret(setting, secrets=secrets):
-    try:
-        return secrets[setting]
-    except KeyError:
-        error_msg = "Set the {} environment variable".format(setting)
-        raise ImproperlyConfigured(error_msg)
+    return secrets[setting]
 
 
 SECRET_KEY = get_secret("SECRET_KEY")
