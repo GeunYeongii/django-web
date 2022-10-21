@@ -1,9 +1,7 @@
 > Run
 ```python
 $ pip install pipenv
-$ pipenv install
-$ pipenv shell
-$ cd webproj
+$ pip install -r requirements.txt
 $ pipenv shell
 $ python manage.py runserver
 ```
