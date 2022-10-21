@@ -15,6 +15,13 @@ $ python manage.py runserver
 $ python manage.py makemigrations <app_name>
 $ python manage.py migrate
 ```
+
+https://user-images.githubusercontent.com/82564045/197117316-1702b40c-7474-4111-9ae3-993a84823fbf.mov
+
+https://user-images.githubusercontent.com/82564045/197117547-34633d39-8c63-4cd7-a74b-2cf0c048ab51.mov
+
+
+
 <img width="1398" alt="Screen Shot 2022-10-20 at 7 13 05 PM" src="https://user-images.githubusercontent.com/82564045/196922080-d3125491-3be2-48c4-bd48-f0b3e203c330.png">
 <img width="1398" alt="Screen Shot 2022-10-20 at 7 13 28 PM" src="https://user-images.githubusercontent.com/82564045/196922100-df0508f1-56b2-471c-b06d-16c247f360a5.png">
 <img width="1398" alt="Screen Shot 2022-10-20 at 7 13 44 PM" src="https://user-images.githubusercontent.com/82564045/196922109-090b0f3a-6f31-4071-b9bf-3d98eccf18d6.png">
