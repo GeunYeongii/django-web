@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os
 from pathlib import Path
+import json
 import dj_database_url
+from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,14 +22,30 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
+secret_file = os.path.join(BASE_DIR, 'secrets.json')
+
+with open(secret_file) as f:
+    secrets = json.loads(f.read())
+
+
+def get_secret(setting, secrets=secrets):
+    try:
+        return secrets[setting]
+    except KeyError:
+        error_msg = "Set the {} environment variable".format(setting)
+        raise ImproperlyConfigured(error_msg)
+
+
+SECRET_KEY = get_secret("SECRET_KEY")
+
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = config('SECRET_KEY')
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-3bb0)a5^&u6a2g%=9t43k7kzwzj-t-f4169ce4(qw)gt9^#r%c')
+#SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-3bb0)a5^&u6a2g%=9t43k7kzwzj-t-f4169ce4(qw)gt9^#r%c')
 #SECRET_KEY = 'django-insecure-3bb0)a5^&u6a2g%=9t43k7kzwzj-t-f4169ce4(qw)gt9^#r%c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.environ.get('DJANGO_DEBUG', False))
+DEBUG = (os.environ.get('DEBUG', 'True') != 'False')
 
 #DEBUG = config('DEBUG', default=False, cast=bool)
 
@@ -130,7 +148,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
@@ -140,7 +158,7 @@ STATICFILES_DIRS = (
 )
 
 # The absolute path to the directory where collectstatic will collect static files for deployment.
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 
