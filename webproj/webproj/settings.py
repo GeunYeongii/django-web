@@ -22,10 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-3bb0)a5^&u6a2g%=9t43k7kzwzj-t-f4169ce4(qw)gt9^#r%c'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-3bb0)a5^&u6a2g%=9t43k7kzwzj-t-f4169ce4(qw)gt9^#r%c')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = bool(os.environ.get('DJANGO_DEBUG', False))
 
 ALLOWED_HOSTS = ['*'] # 임시 설정 (for deploy)
 
@@ -88,6 +88,8 @@ DATABASES = {
     }
 }
 
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -108,8 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+
 
 
 # Internationalization
