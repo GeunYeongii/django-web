@@ -98,7 +98,7 @@ WHITENOISE_USE_FINDERS = True
 WHITENOISE_MANIFEST_STRICT = False
 WHITENOISE_ALLOW_ALL_ORIGINS = True
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-
+CSRF_TRUSTED_ORIGINS = ["https://django-kdt.herokuapp.com"]
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
