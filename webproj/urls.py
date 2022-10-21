@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from homepage.views import index, coffee_view,create,update,delete,eda
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('',index,name='index'), # 127.0.0.1/
@@ -27,3 +28,5 @@ urlpatterns = [
     path('eda/',eda,name='eda'),
     path('admin/', admin.site.urls), # 127.0.0.1/admin  
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
