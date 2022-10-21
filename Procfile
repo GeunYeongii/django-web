@@ -1,3 +1,3 @@
 web: gunicorn webproj.wsgi --log-file -
 web: pip install django dj_database_url whitenoise
-web: python manage.py runserver
+web: python manage.py runserver 0.0.0.0:$PORT
