@@ -32,7 +32,7 @@ DEBUG = True#bool(os.environ.get('DJANGO_DEBUG', False))
 
 #DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['webproj.herokuapp.com',
+ALLOWED_HOSTS = ['django-web-kdt-ai.herokuapp.com',
                  '127.0.0.1'
                  ]
 
