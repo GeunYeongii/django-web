@@ -23,17 +23,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = config('SECRET_KEY')
-#SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-3bb0)a5^&u6a2g%=9t43k7kzwzj-t-f4169ce4(qw)gt9^#r%c')
-SECRET_KEY = 'django-insecure-3bb0)a5^&u6a2g%=9t43k7kzwzj-t-f4169ce4(qw)gt9^#r%c'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-3bb0)a5^&u6a2g%=9t43k7kzwzj-t-f4169ce4(qw)gt9^#r%c')
+#SECRET_KEY = 'django-insecure-3bb0)a5^&u6a2g%=9t43k7kzwzj-t-f4169ce4(qw)gt9^#r%c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False#bool(os.environ.get('DJANGO_DEBUG', False))
 
 #DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['taranndus.pythonanywhere.com',
-                 '127.0.0.1'
-                 ]
+ALLOWED_HOSTS = ['*']
 
 WSGI_APPLICATION = 'webproj.wsgi.application'
 
@@ -51,13 +49,13 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'webproj.urls'
@@ -83,6 +81,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'webproj.wsgi.application'
 
+WHITENOISE_USE_FINDERS = True
+WHITENOISE_MANIFEST_STRICT = False
+WHITENOISE_ALLOW_ALL_ORIGINS = True
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
@@ -128,13 +130,15 @@ USE_I18N = True
 
 USE_TZ = True
 
-
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+
 STATIC_URL = '/static/'
 # The absolute path to the directory where collectstatic will collect static files for deployment.
-STATIC_ROOT = BASE_DIR / "staticfiles"
+
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
