@@ -30,7 +30,7 @@
 
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.html"><span>J</span>ooGeunYeong</a>
+			<a class="navbar-brand" href="/"><span>J</span>ooGeunYeong</a>
 			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
 				data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
@@ -58,8 +58,8 @@
 			<div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
 				<div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center">
 					<div class="text text-center">
-						<span class="subheading">Hey! I am</span>
-						<h1>주근영</h1>
+						<span class="subheading">[4기-A] 주근영</span>
+						<h1>Titanic EDA</h1>
 						<h2>I'm a
 							<span class="txt-rotate" data-period="500"
 								data-rotate='[  "KDT_AI", "4th Devcourse"]'></span>
@@ -95,7 +95,12 @@
 								<div class="text">
 									<p><a target="_blank"
 											href="https://www.kaggle.com/competitions/titanic/data"
-											class="btn btn-primary py-3 px-3">LINK</a></p>
+											class="btn btn-primary py-3 px-3">Data</a></p>
+								</div>
+								<div class="text" style="margin-left: 30px;">
+									<p><a target="_blank"
+											href="https://github.com/GeunYeongii/django-web"
+											class="btn btn-primary py-3 px-3">Github</a></p>
 								</div>
 							</div>
 						</div>
@@ -154,8 +159,8 @@
 				<div class="col-md-3">
 					<nav id="navi">
 						<ul>
-							<li><a href="#page-1">Hypothesis</a></li>
-							<li><a href="#page-2">Experience</a></li>
+							<li><a href="#page-1">Insight</a></li>
+							<li><a href="#page-2">Hypothesis</a></li>
 							<!-- <li><a href="#page-3">Skills</a></li> -->
 							<li><a href="#page-4">Projects</a></li>
 						</ul>
@@ -163,93 +168,145 @@
 				</div>
 				<div class="col-md-9" id="education-section">
 					<div id="page-1" class="page one">
+						<h2 class="heading">Insight</h2>
+						<div class="resume-wrap d-flex ftco-animate">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="flaticon-ideas"></span>
+							</div>
+							<div class="text pl-3">
+								<span class="date">Pclass</span>
+								<h2>위치에 따른 생존률 확인</h2>
+								<div><img class="d-md-flex" style="width: 100%; height: 100%;" src="../static/images/surviving_pclass.png"></div>
+								<span class="position">Grpah<br/></span>
+								<p>3등석이 사망자수가 가장 많았고, 1등석이 생존률이 가장 높다.<br>
+
+									A,B,C 객실은 1등급 손님만 탑승했는 걸 볼 수 있다.<br>
+									
+									등급이 높을수록 생존률이 높다는 것을 알 수 있고, Cabin의 결측치는 Pclass로 대체해도 좋을 것 같다.</p>
+							</div>
+						</div>
+						<div class="resume-wrap d-flex ftco-animate">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="flaticon-ideas"></span>
+							</div>
+							<div class="text pl-3">
+								<span class="date">Initial</span>
+								<h2>Initial에 따른 생존률과 연령대</h2>
+								<div><img class="d-md-flex" style="width: 100%; height: 100%;" src="../static/images/survive_sex.png"></div>
+								<span class="position">Graph<br/></span>
+								<p>
+									Age가 10 이후로 생존한 kde 그래프가 생존하지 못한 kde 그래프보다 높아진다
+								</p>
+								<span class="position">Insight</span>
+								<p>
+									10살 미만의 사람들은 생존할 확률이 더 높지만, 10살 이상부터는 생존하지 못할 확률이 더 높다
+								</p>
+							</div>
+						</div>
+						<div class="resume-wrap d-flex ftco-animate">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="flaticon-ideas"></span>
+							</div>
+							<div class="text pl-3">
+								<span class="date">Age</span>
+								<h2>Age 따른 생존률</h2>
+								<div><img class="d-md-flex" style="width: 100%; height: 100%;" src="../static/images/survive_age.png"></div>
+								<span class="position">Graph<br/></span>
+								<p>
+									탑승객 중 Mr 호칭이 가장 많았지만, 생존율이 매우 낮았다.<br>
+									반면 Mrs와 Miss 호칭의 탑승객은 생존율이 절반 이상이다.<br>
+									Other 호칭의 탑승객 생존율은 매우 낮다.<br>
+									Mr 와 Mrs 의 호칭을 가진 사람은 오른쪽으로 skew 된 분포를 보이며 대체적으로 30대라고 할 수 있다.<br>
+									Miss 호칭을 가진 사람은 20대라고 볼 수 있다.<br>
+									Master 호칭을 가진 사람은 0~10살 사이로 보인다.<br>
+									Other의 경우, 왼쪽으로 skew 된 분포를 보이며 대체적으로 50대라고 할 수 있다.<br>
+								</p>
+								<span class="position">Insight</span>
+								<p>
+									
+									젊은 남성(Mr),중년층(Other)의 경우 생존율이 낮고, 여성(Mrs, Miss)의 경우 생존율이 높다.<br>
+									각 호칭별 적절한 나이 통계량 값을 이용하여 Age의 결측치를 채우는데 도움이 될 수 있다.<br>
+								</p>
+							</div>
+						</div>
+						<div class="resume-wrap d-flex ftco-animate">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="flaticon-ideas"></span>
+							</div>
+							<div class="text pl-3">
+								<span class="date">sibsp_parch</span>
+								<h2>동승자 수에 따른 생존률</h2>
+								<div><img class="d-md-flex" style="width: 100%; height: 100%;" src="../static/images/sibsp_parch.png"></div>
+								<span class="position">Graph<br/></span>
+								<p>
+									3~6 표본이 적기 때문에 비율을 보는건 큰 영향이 없을 것 같다.<br>
+									0~2만 볼 때, 0에 비해 1~2는 확연하게 생존률이 높다.<br>
+								</p>
+								<span class="position">Insight</span>
+								<p>
+									오버피팅을 예방하기 위해 3이상은 하나의 그룹으로 묶는게 좋은 것 같다.<br>
+									혼자 타는 것 보다는 동승자(부모 및 자녀)가 1~3명 있을 경우 생존률이 높다.<br>
+									하지만 동승자가 너무 많은 경우에는 생존률이 급격히 줄어들게 된다.<br>
+
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div id="page-2" class="page two">
 						<h2 class="heading">Hypothesis</h2>
 						<div class="resume-wrap d-flex ftco-animate">
 							<div class="icon d-flex align-items-center justify-content-center">
 								<span class="flaticon-ideas"></span>
 							</div>
 							<div class="text pl-3">
-								<span class="date">2017-2020</span>
-								<h2>정보보호학 전공 & 인공지능 부 전공</h2>
-								<span class="position">Sejong University</span>
+								<span class="date">Hypothesis</span>
+								<h2>가설 세우기</h2>
+								<span class="position">
+									- Pclass : 1 > 2 > 3<br>
+								</span>
+								<p>높은 클래스일수록 생존율이 높다.</p><br>
+								<span class="position">
+									- Name(Initaial) : Miss > Mrs > Master > Mr > Other<br>
+								</span>
+								<p>여성일수록 생존율이 높고, 남성과 중년층은 생존율이 낮다.</p><br>
+								<span class="position">
+									- Sex : female > male<br>
+								</span>
+								<p>높은 클래스일수록 생존율이 높다.</p><br>
+								<span class="position">
+									- Age : 10 > 40 > 20 > 30<br>
+								</span>
+								<p>10살이전이 가장 생존률 높고 20~30대가 가장 생존률이 낮다.</p><br>
+								<span class="position">
+									- sibsp_parch : 1 > 2 > 0 > 3 > 4이상<br>
+								</span>
+								<p>혼자보다는 동승자가 있을수록 생존율이 높지만, 동승자가 3명 이상이라면 생존율이 급격히 낮아진다.</p><br>
 							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2014-2016</span>
-								<h2>경복고등학교 졸업</h2>
-								<span class="position">KyungBok highschool</span>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2022-2023</span>
-								<h2>KDT_AI</h2>
-								<span class="position">AI Devcourse</span>
-							</div>
+
 						</div>
 					</div>
-
-					<div id="page-2" class="page two">
-						<h2 class="heading">Work Experience</h2>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2021.03-2021.07</span>
-								<h2>Sever room engineer</h2>
-								<span class="position">이천 공군 작전 사령부</span>
-								<p>공군 작전 사령부의 전투기 데이터베이스 관리.<br /></p>
-								<b class="text-primary">기술 스택</b>
-								<p>Oracle,JavaScript</p>
-								</p>
-							</div>
-
-						</div>
-
 					
 					<div id="page-4" class="page four">
-						<h2 id="projects-section" class="heading">Projects</h2>
+						<h2 id="projects-section" class="heading">Training</h2>
 						<div class="resume-wrap d-flex ftco-animate">
 							<div class="icon d-flex align-items-center justify-content-center">
 								<span class="flaticon-ideas"></span>
 							</div>
 							<div class="text pl-3">
-								<span class="date">2021.10-2021.12</span>
+								<span class="date">train</span>
 								<div class="d-flex">
-									<h2>Bitcoin Hashrate Predict TermProject</h2>
-
+									<h2>Train data 학습하기</h2>
 								</div>
-								<span class="position">Sejong Univ AI TermProject</span>
-								<div> <b class="text-dark">Tech Stack : </b>python, pytorch, skitlearn, pandas
-								</div>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2020.11-2021.04</span>
-								<h2>SI Solution</h2>
-								<span class="position">YD-software</span>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2021.09-2021.12</span>
-								<h2>Kaggle</h2>
-								<span class="position">Sejong Univ AI kaggle compete</span>
+								<span class="position">
+									- 각 데이터의 가중치를 설정해 일정 점수 이상되어야 생존으로 판단<br>
+								</span>
+								<span class="position">
+									- Train Set 에서의 정확도 : &nbsp;0.8002244668911336<br>
+									- Submission Score&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;0.76555
+								</span>
+								
+								<div><img class="d-md-flex" style="width: 100%; height: 100%;" src="../static/images/train_code.png"></div>
 							</div>
 						</div>
 					</div>
@@ -333,147 +390,6 @@
 		</div>
 	</section> -->
 
-	<section class="ftco-section" id="blog-section">
-		<div class="container">
-			<div class="row justify-content-center mb-5 pb-5">
-				<div class="col-md-7 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Blog</h1>
-					<h2 class="mb-4">My Blog</h2>
-					<!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p> -->
-				</div>
-			</div>
-			<div class="row d-flex">
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="https://velog.io/@gnyiii/series/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5-%EB%B0%B0%EC%9A%B0%EA%B8%B0" class="block-20" style="background-image: url('https://media.vlpt.us/images/gnyiii/post/ff36d917-07c2-4a24-a7cb-96ec1bed5f64/image.png');">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="https://velog.io/@gnyiii/series/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5-%EB%B0%B0%EC%9A%B0%EA%B8%B0">What is artificial intelligence and linear regression?</a>
-							</h3>
-							<div class="d-flex align-items-center mb-3 meta">
-								<p class="mb-0">
-									<span class="mr-2">Nov. 22, 2021</span>
-									<a class="mr-2">Admin</a>
-									<!-- <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a> -->
-								</p>
-							</div>
-							<p>Coursera Deep Learning Specializtion 과 Basic Machine/Deep Learning with Tensorflow(python)-모두를 위한 딥러닝 및 세종대학교 최유경교수님의 인공지능 강의를 바탕으로 학습을 해보았습니다.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="https://velog.io/@gnyiii/series/Keras-딥러닝" class="block-20" style="background-image: url('https://velog.velcdn.com/images/gnyiii/post/9ab9ef1a-98d5-4d21-b991-07b8215d48dc/image.png');">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="https://velog.io/@gnyiii/series/Keras-딥러닝">Tensorflow</a>
-							</h3>
-							<div class="d-flex align-items-center mb-3 meta">
-								<p class="mb-0">
-									<span class="mr-2">Oct. 10, 2022</span>
-									<a class="mr-2">Admin</a>
-									<!-- <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a> -->
-								</p>
-							</div>
-							<p>DeepLearning을 배우며 여러가지 Tensorflow의 사용방법에 대해 공부한 내용을 기록했습니다.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry">
-						<a href="https://github.com/GeunYeongii" class="block-20" style="background-image: url('https://avatars.githubusercontent.com/u/82564045?v=4');">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="https://github.com/GeunYeongii">Gnyiii's Github</a>
-							</h3>
-							<div class="d-flex align-items-center mb-3 meta">
-								<p class="mb-0">
-									<span class="mr-2">Apr. 15, 2021</span>
-									<a class="mr-2">Admin</a>
-									<!-- <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a> -->
-								</p>
-							</div>
-							<p>😄 I'm undergraduate student majoring in Information Security,
-								and studying Machine Learning and BlockChain Technology.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="ftco-section ftco-hireme img" style="background-image: url(images/bg_1.jpg)">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-7 ftco-animate text-center">
-					<h2>함께할 <span>회사를 찾는 중</span> 입니다.</h2>
-					<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-					<p class="mb-0"><a href="#" class="btn btn-primary py-3 px-5">연락주세요.</a></p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-		<div class="container">
-			<div class="row justify-content-center mb-5 pb-3">
-				<div class="col-md-7 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Contact</h1>
-					<h2 class="mb-4">Contact Me</h2>
-					<p>회사와 함께 성장하는 개발자가 되겠습니다. 연락주세요.</p>
-				</div>
-			</div>
-
-			<div class="row d-flex contact-info mb-5">
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4 shadow">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-map-signs"></span>
-						</div>
-						<div>
-							<h3 class="mb-4">Address</h3>
-							<p>서울특별시 성북구</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4 shadow">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-phone2"></span>
-						</div>
-						<div>
-							<h3 class="mb-4">Contact Number</h3>
-							<p><a href="tel://1234567920">+ 010 42** ****</a></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4 shadow">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-paper-plane"></span>
-						</div>
-						<div>
-							<h3 class="mb-4">Email Address</h3>
-							<p><a href="mailto:info@yoursite.com">*******@gmail.com</a></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4 shadow">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-globe"></span>
-						</div>
-						<div>
-							<h3 class="mb-4">Website</h3>
-							<p><a href="#">Gnyiii.com</a></p>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</section>
 
 
 	<footer class="ftco-footer ftco-section">
